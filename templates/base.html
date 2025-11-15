@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}JSCOE - E&TC Department{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #003366;
+      --bg-color: #f8f9fa;
+      --card-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      --border-radius: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: var(--bg-color);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--card-shadow);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      padding: 10px;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      background-color: #ffc107;
+      color: #000;
+      border-radius: 5px;
+    }
+
+    /* Main Content */
+    main {
+      padding: 100px 20px 40px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 5px;
+    }
+
+    .footer-section ul li a {
+      color: white;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #555;
+      padding-top: 20px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="/static/main/images/JSCOE_logo.png" alt="JSCOE logo">
+          <span>Jayawantrao Sawant College Of Engineering</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/#programs">Programs</a></li>
+            <li><a href="/#research">Research</a></li>
+            <li><a href="/#news">News & Events</a></li>
+            <li><a href="/faculty/">Faculty</a></li>
+            <li><a href="/login/">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Department</h3>
+          <ul>
+            <li><a href="#">Vision & Mission</a></li>
+            <li><a href="#">Faculty</a></li>
+            <li><a href="#">Facilities</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Academic</h3>
+          <ul>
+            <li><a href="#">B.Tech Programs</a></li>
+            <li><a href="#">M.Tech Programs</a></li>
+            <li><a href="#">Ph.D Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">News & Events</a></li>
+            <li><a href="#">Research</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Phone: +91-20-26970000</p>
+          <p>Email: principal@jscoe.edu.in</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 JSCOE E&TC Department. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

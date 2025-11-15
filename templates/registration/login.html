@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Login - JSCOE E&TC Department{% endblock %}
+
+{% block content %}
+<style>
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 40px 20px;
+  }
+
+  .login-card {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .login-card h2 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2em;
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .login-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95em;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+  }
+
+  .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  }
+
+  .login-btn:active {
+    transform: translateY(0);
+  }
+
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #721c24;
+  }
+
+  .signup-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+  }
+
+  .signup-link a {
+    color: #007bff;
+    font-weight: 600;
+  }
+
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .login-card {
+      padding: 30px 25px;
+    }
+
+    .login-card h2 {
+      font-size: 1.6em;
+    }
+  }
+</style>
+
+<div class="login-container">
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    <p class="login-subtitle">Sign in to your account</p>
+
+    {% if form.non_field_errors %}
+      <div class="error-message">
+        {% for error in form.non_field_errors %}
+          <div>{{ error }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+
+      {% if form.username %}
+        <div class="form-group">
+          <label for="{{ form.username.id_for_label }}">Username</label>
+          {{ form.username }}
+          {% if form.username.errors %}
+            <div class="error-message" style="margin-top: 5px;">
+              {{ form.username.errors }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if form.password %}
+        <div class="form-group">
+          <label for="{{ form.password.id_for_label }}">Password</label>
+          {{ form.password }}
+          {% if form.password.errors %}
+            <div class="error-message" style="margin-top: 5px;">
+              {{ form.password.errors }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <button type="submit" class="login-btn">Sign In</button>
+    </form>
+
+    <!-- <div class="signup-link">
+      Don't have an account? <a href="#">Sign up here</a>
+    </div> -->
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}Home - JSCOE E&TC Department{% endblock %}
+
+{% block content %}
+{% load static %}
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Swiper.js CSS for news slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="{% static 'home.css' %}">
+
+<body>
+
+    <!-- Hero Section -->
+    <!-- <section id="home" class="hero" style="background-image: url('{% static "main/images/ENTC_Department_Assemble.jpg" %}');"
+>
+        <div class="container">
+            <h1>Department Of Electronics and Telecommunication Engineering</h1>
+        </div>
+    </section> -->
+    <div  class="hero no-padding">
+    <section id="home" class="hero"  class="hero no-padding">
+    <div class="container">
+        <h1>Department Of Electronics and Telecommunication Engineering</h1>
+    </div>
+</section>
+</div>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- About Section -->
+            <section id="about">
+                <h2>About the Department</h2>
+                <div class="about-grid">
+                    <div>
+                        <img src="https://source.unsplash.com/random/600x400/?electronics" alt="Department Lab">
+                        <h3>Vision</h3>
+                        <p>To be a globally recognized center of excellence in Electronics and Telecommunication Engineering education and research, fostering innovation and entrepreneurship.</p>
+                    </div>
+                    <div>
+                        <img src="https://source.unsplash.com/random/600x400/?telecom" alt="Telecom Research">
+                        <h3>Mission</h3>
+                        <p>To impart quality education, promote research in emerging technologies, and develop skilled professionals for industry and society.</p>
+                    </div>
+                </div>
+                <p>The Department of Electronics and Telecommunication Engineering at JSCOE offers undergraduate, postgraduate, and doctoral programs with a focus on cutting-edge areas like VLSI, Wireless Communications, Signal Processing, and IoT.</p>
+            </section>
+
+            <!-- Programs Section -->
+            <section id="programs">
+                <h2>Academic Programs</h2>
+                <div class="programs-list">
+                    <div class="program-card">
+                        <h3>B.Tech. ECE</h3>
+                        <p>4-year undergraduate program in Electronics and Communication Engineering.</p>
+                        <a href="https://vit.ac.in/schools/school-of-electronics-engineering/btech-ece">More Details</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>M.Tech. VLSI</h3>
+                        <p>2-year postgraduate program specializing in Very Large Scale Integration.</p>
+                        <a href="https://vit.ac.in/schools/school-of-electronics-engineering/mtech-vlsi">More Details</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>M.Tech. Communication Engg.</h3>
+                        <p>Advanced studies in wireless and optical communication systems.</p>
+                        <a href="https://vit.ac.in/schools/school-of-electronics-engineering/mtech-communication">More Details</a>
+                    </div>
+                    <div class="program-card">
+                        <h3>Ph.D. Programs</h3>
+                        <p>Research opportunities in electronics, telecom, and related fields.</p>
+                        <a href="https://vit.ac.in/schools/school-of-electronics-engineering/phd">More Details</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research">
+                <h2>Research Areas</h2>
+                <p>Our department is at the forefront of research in electronics and telecom. Explore our labs and publications.</p>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <img src="https://source.unsplash.com/random/300x150/?vlsi" alt="VLSI Lab">
+                        <h3>VLSI Design Lab</h3>
+                        <p>Focus on chip design, FPGA prototyping, and semiconductor research.</p>
+                        <a href="#">View Publications</a>
+                    </div>
+                    <div class="research-card">
+                        <img src="https://source.unsplash.com/random/300x150/?wireless" alt="Wireless Lab">
+                        <h3>Wireless Communications Lab</h3>
+                        <p>Research in 5G, IoT, and antenna design.</p>
+                        <a href="#">View Projects</a>
+                    </div>
+                    <div class="research-card">
+                        <img src="https://source.unsplash.com/random/300x150/?signal" alt="Signal Processing Lab">
+                        <h3>Signal Processing Lab</h3>
+                        <p>Advanced algorithms for image, audio, and biomedical signals.</p>
+                        <a href="#">View Labs</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News & Events Section with Slider -->
+            <section id="news">
+                <h2>News & Events</h2>
+                <div class="news-section">
+                    <div class="swiper news-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="news-card">
+                                    <img src="https://source.unsplash.com/random/400x150/?seminar" alt="Seminar Event">
+                                    <h3>Tech Seminar 2023</h3>
+                                    <p>Join us for insights on 5G advancements. Date: Oct 15, 2023.</p>
+                                    <a href="#">Register</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news-card">
+                                    <img src="https://source.unsplash.com/random/400x150/?workshop" alt="Workshop">
+                                    <h3>IoT Workshop</h3>
+                                    <p>Hands-on session on smart devices. Date: Nov 5, 2023.</p>
+                                    <a href="#">Details</a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="news-card">
+                                    <img src="https://source.unsplash.com/random/400x150/?conference" alt="Conference">
+                                    <h3>International Conference</h3>
+                                    <p>Present your research at ECE Conf 2023.</p>
+                                    <a href="#">Submit Paper</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Faculty Section -->
+            <section id="faculty">
+                <h2>Alumni Reviews</h2>
+                <p>Our department boasts highly qualified aluminies with expertise in various domains.</p>
+                <div class="faculty-grid">
+                    <div class="faculty-card">
+                        <img src="https://source.unsplash.com/random/100x100/?professor" alt="Dr. A. Smith">
+                        <h4>A. Smith</h4>
+                        <p>2022 Batch</p>
+                        <p>Specialization: Wireless Communications</p>
+                    </div>
+                    <div class="faculty-card">
+                        <img src="https://source.unsplash.com/random/100x100/?engineer" alt="Dr. B. Johnson">
+                        <h4>B. Johnson</h4>
+                        <p>2019 Batch</p>
+                        <p>Specialization: VLSI Design</p>
+                    </div>
+                    <div class="faculty-card">
+                    </div>
+                    <div class="faculty-card">
+                        <img src="https://source.unsplash.com/random/100x100/?engineer" alt="C. Rogers">
+                        <h4>C. Rogers</h4>
+                        <p>2021 Batch</p>
+                        <p>Specialization: System Design</p>
+                    </div>
+                    <div class="faculty-card">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-grid">
+                        <div>
+                            <h3>Department Address</h3>
+                            <p>Jayawantrao Sawant College of Engineering<br>
+                            Survey No. 58, Indrayani Nagar, Handewadi Road,<br>
+                            Hadapsar, Pune - 411028, Maharashtra, India</p>
+                            <p><strong>Phone:</strong> +91-20-26970000<br>
+                            <strong>Email:</strong> principal@jscoe.edu.in</p>
+                            
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2121.7321528917787!2d73.93474013718462!3d18.474172945892867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e9f58d2f4a65%3A0xdc08459c826bf8be!2sJSPM%20Group%20Of%20Institutes%2C%20Hadapsar!5e0!3m2!1sen!2sin!4v1762519325384!5m2!1sen!2sin" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+{% endblock %}
