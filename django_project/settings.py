@@ -124,4 +124,4 @@ STATICFILES_DIRS = [
 # For production (optional)
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "landing"

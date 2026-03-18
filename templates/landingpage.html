@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - JSCOE E&TC Department{% endblock %}
+
+{% block content %}
+<style>
+  .landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 40px 20px;
+  }
+
+  .welcome-card {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .welcome-card h1 {
+    color: #003366;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+  }
+
+  .username {
+    color: #007bff;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  .welcome-message {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  .nav-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: #0056b3;
+    text-decoration: none;
+  }
+
+  .logout-link {
+    background: #dc3545 !important;
+  }
+
+  .logout-link:hover {
+    background: #c82333 !important;
+  }
+
+  @media (max-width: 768px) {
+    .welcome-card {
+      padding: 40px 20px;
+    }
+
+    .welcome-card h1 {
+      font-size: 1.6em;
+    }
+
+    .username {
+      font-size: 1.4em;
+    }
+  }
+</style>
+
+<div class="landing-container">
+  <div class="welcome-card">
+    <h1>Hi <span class="username">{{ username }}</span>! 👋</h1>
+    <p class="welcome-message">
+      Welcome to the E&TC Department Portal. You are now logged in.
+    </p>
+    <div class="nav-links">
+      <a href="/login/">Logout</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

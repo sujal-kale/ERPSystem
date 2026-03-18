@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
+  {% load static %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}JSCOE - E&TC Department{% endblock %}</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{% static 'main/images/JSCOE_logo.png' %}">
+
+
   <style>
     :root {
       --primary-color: #007bff;
@@ -157,7 +161,6 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="container">
       <div class="header-content">
@@ -185,7 +188,7 @@
     {% endblock %}
   </main>
 
-  <!-- Footer -->
+  
   <footer>
     <div class="container">
       <div class="footer-content">
